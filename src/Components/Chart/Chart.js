@@ -73,7 +73,7 @@ const Chart = ({data: {
                 title: {display: true, text: `Current State in ${country}`}
             }}
         />
-    ): null;
+    ): null
 
     return (
         <div className={styles.container}>{country ? barChart : lineChart}</div>
