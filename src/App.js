@@ -7,6 +7,7 @@ import styles from './App.module.css';
 // import coronaImage from './images/image.jpg'
 
 class App extends React.Component{
+  // Initialising state in a classbased component
   state = {
     data:{}
   }
