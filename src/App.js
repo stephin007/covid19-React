@@ -10,6 +10,7 @@ import {
 import InfoBox from './components/InfoBox'
 import Map from './components/Map'
 import Table from './components/Table'
+import LineGraph from './components/LineGraph'
 
 import {sortData} from './utils'
 
@@ -100,6 +101,7 @@ const App =()=>{
           <Table countries={tableData} />
           <h3>World Wide New Cases</h3>
           {/* Graph */}
+          <LineGraph />
         </CardContent>
       </Card>
     </div>  
