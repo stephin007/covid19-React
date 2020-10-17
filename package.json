@@ -10,6 +10,7 @@
     "axios": "^0.20.0",
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
+    "numeral": "^2.0.6",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.10.0",
     "react-countup": "^4.3.3",
