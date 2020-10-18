@@ -1,7 +1,7 @@
 .table{
     margin-top: 20px;
     overflow: scroll;
-    height: 400px;
+    height: 300px;
     overflow-x: hidden;
     color: #6a5d5d;
 }
@@ -17,4 +17,10 @@
 
 .table tr:nth-of-type(odd){
     background-color: #f3f2f8;
+}
+
+@media (max-width:990px){
+    .table{
+        height: 200px;
+    }
 }
