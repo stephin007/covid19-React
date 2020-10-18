@@ -23,12 +23,12 @@ body{
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  margin-right: 10px;
   justify-content: space-between;
 }
 
 .app__stats{
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 

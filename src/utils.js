@@ -30,6 +30,9 @@ export const sortData = (data) =>{
     return sortedData
 }
 
+export const prettyPrintStat = (stat) =>
+  stat ? `+${numeral(stat).format("0.0a")}` : "+0";
+
 // Draw circles
 export const  showDataOnMap = (data, casesType='cases')=>(
     data.map(country =>(
@@ -43,12 +46,12 @@ export const  showDataOnMap = (data, casesType='cases')=>(
             }
         >
             <Popup>
-                <div>
-                    <div style={{backgroundImage: `URL(${country.countryInfo.flag})`}}/>
-                    <div>{country.country}</div>
-                    <div>Cases: {numeral(country.cases).format('0,0')}</div>
-                    <div>Recovred: {numeral(country.recovered).format('0,0')}</div>
-                    <div>Deaths: {numeral(country.deaths).format('0,0')}</div>
+                <div className="info-container">
+                    <div className="info-flag" style={{backgroundImage: `URL(${country.countryInfo.flag})`}}/>
+                    <div className="info-name"><strong>{country.country}</strong></div>
+                    <div className="info-confirmed">Cases: {numeral(country.cases).format('0,0')}</div>
+                    <div className="info-recovered">Recovred: {numeral(country.recovered).format('0,0')}</div>
+                    <div className="info-deaths">Deaths: {numeral(country.deaths).format('0,0')}</div>
                 </div>
             </Popup>
         </Circle>
