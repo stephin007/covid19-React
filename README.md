@@ -1,3 +1,8 @@
+[![GitHub issues](https://img.shields.io/github/issues/stephin007/covid19-React)](https://github.com/stephin007/covid19-React/issues)
+[![GitHub forks](https://img.shields.io/github/forks/stephin007/covid19-React)](https://github.com/stephin007/covid19-React/network)
+[![GitHub stars](https://img.shields.io/github/stars/stephin007/covid19-React)](https://github.com/stephin007/covid19-React/stargazers)
+[![GitHub license](https://img.shields.io/github/license/stephin007/covid19-React)](https://github.com/stephin007/covid19-React/blob/main/LICENSE)
+
 ## COVID-19 TRACKER APP
 - This project is a COVID 19 tracker which fetches data and shows all countries. In each country we are showing various data on the virus such as  the numbe of Active cases, Recovered cases, Deaths etc.
 
