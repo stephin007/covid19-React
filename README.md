@@ -1,3 +1,6 @@
+![CodeQL](https://github.com/stephin007/covid19-React/workflows/CodeQL/badge.svg?branch=main)
+![Build and Deploy](https://github.com/stephin007/covid19-React/workflows/Build%20and%20Deploy/badge.svg?branch=main)
+
 [![GitHub issues](https://img.shields.io/github/issues/stephin007/covid19-React)](https://github.com/stephin007/covid19-React/issues)
 [![GitHub forks](https://img.shields.io/github/forks/stephin007/covid19-React)](https://github.com/stephin007/covid19-React/network)
 [![GitHub stars](https://img.shields.io/github/stars/stephin007/covid19-React)](https://github.com/stephin007/covid19-React/stargazers)
