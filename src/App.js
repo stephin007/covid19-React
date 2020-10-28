@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import {
-  MenuItem,
   FormControl,
-  Select, 
   Card,
-  CardContent
+  CardContent,
+  TextField
 } from '@material-ui/core'
+import { Autocomplete } from '@material-ui/lab';
 
 import InfoBox from './components/InfoBox'
 import Map from './components/Map'
@@ -19,7 +19,6 @@ import 'leaflet/dist/leaflet.css'
 import './App.css'
 const App =()=>{
   const [countries, setCountries] = useState([])
-  const [country, setCountry] = useState('worldwide')
   const [countryInfo, setCountryInfo] = useState({})
   const [tableData, setTableData] = useState([])
   const [mapCenter, setMapCenter] = useState({
@@ -60,16 +59,17 @@ const App =()=>{
     getCountriesData()
   },[])
 
-  const onCountryChange = async (e) => {
-    const countryCode = e.target.value;
+  const onCountryChange = async (newValue) => {
+    if(!newValue) {
+      return;
+    }
+    const countryCode = newValue.value;
     // console.log(countryCode)
-    setCountry(countryCode)
     const URL = countryCode === 'worldwide'? 'https://disease.sh/v3/covid-19/all' : `https://disease.sh/v3/covid-19/countries/${countryCode}`
 
     await fetch(URL)
     .then(response=> response.json())
     .then(data=>{
-      setCountry(countryCode)
       setCountryInfo(data)
 
       setMapCenter([data.countryInfo.lat,data.countryInfo.long])
@@ -84,15 +84,21 @@ const App =()=>{
         <div className="app__header">
         <h1 className="app__title">COVID-19 Tracker</h1>
         <FormControl className="app__dropdown">
-          <Select variant="outlined" value={country} onChange={onCountryChange}>
-            {/* Loop through all countries and show them in the drop down */}
-            <MenuItem value="worldwide">WorldWide</MenuItem>
-              {
-                countries.map((country)=>(
-                  <MenuItem value={country.value}>{country.name}</MenuItem>
-                ))
-              }
-          </Select>
+          <Autocomplete
+            style={{ width: 300 }}
+            options={countries}
+            getOptionLabel={(option) => option.name}
+            onChange={(e, newValue) => {
+              onCountryChange(newValue)
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Choose a country"
+                variant="outlined"
+              />
+            )}
+          />
         </FormControl>
         </div>
 
